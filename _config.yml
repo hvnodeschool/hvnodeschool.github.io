@@ -1,5 +1,7 @@
 name: Happy Valley Node School
+
 pygment: true
+markdown: kramdown
 
 timezone: America/New_York
 encoding: utf-8
