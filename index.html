@@ -1,6 +1,9 @@
 ---
 layout: ghostscroll
 title: Happy Valley - Learn Node.js Workshop
+
+logo: /assets/images/nodeschool_io_logo.png
+cover: /assets/images/happeyvalleynodeschool.png
 ---
 <header id="site-head" {% if page.cover %}style="background-image: url({{ page.cover }})"{% endif %}>
     <div class="vertical">
@@ -8,10 +11,10 @@ title: Happy Valley - Learn Node.js Workshop
 
             {% if page.logo %}<a id="blog-logo" href="{{ page.logo }}"><img src="{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
             <h1 class="blog-title">{{ page.title }}</h1>
-            <h2 class="blog-description">{{ site.description }}</h2>
+            <h2 class="blog-description">A p2p node.js learning workshop in State College, PA., using the nodeschool.io open source choose-your-own-adventure lessons.</h2>
 
-            <a class='btn first'>Take a tour</a>
-            <a class='btn last'>Cut to the chase</a><br>
+            <a class='btn first'>Learn More!</a>
+            <a class='btn last'>Sign Me Up!</a><br>
             <i id='header-arrow' class="fa fa-angle-down"></i>
         </div>
     </div>
@@ -34,7 +37,7 @@ title: Happy Valley - Learn Node.js Workshop
                 <h2 class="post-title">{{ post.title }}</h2>
             </header>
             <section class="post-content">
-                <p>{{ post.content }}</p>
+                <p>{{ post.output }}</p>
             </section>
         </article>
         <div class='post-after'></div>
