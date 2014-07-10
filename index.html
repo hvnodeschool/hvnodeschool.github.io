@@ -25,9 +25,9 @@ cover: /assets/images/happyvalleynodeschool.png
 
     {% for post in site.posts %}
     <div class='post-holder'>
-            {% if forLoop.first %}
+            {% if forloop.first %}
                 <article class="post first">
-            {% elsif forLoop.last %}
+            {% elsif forloop.last %}
                 <article class="post last">
             {% else %}
                 <article class="post">
