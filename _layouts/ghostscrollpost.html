@@ -1,0 +1,20 @@
+---
+---
+<div class='post-holder'>
+        {% if page.first %}
+            <article class="post first">
+        {% elsif page.last %}
+            <article class="post last">
+        {% else %}
+            <article class="post">
+        {% endif %}
+    
+        <header class="post-header">                
+            <h2 class="post-title">{{ page.title }}</h2>
+        </header>
+        <section class="post-content">
+            <p>{{ content }}</p>
+        </section>
+    </article>
+    <div class='post-after'></div>
+</div>
