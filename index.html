@@ -23,18 +23,7 @@ cover: /assets/images/happyvalleynodeschool.png
 <main class="content" role="main">
     <div class='fixed-nav'></div>
 
-    {% include 0_learn_you_node.html %}
-    {% include 1_what_the_h3ll.html %}
-    {% include 2_top_ten_reasons.html %}
-    {% include 3_whats_the_workshop_like.html %}
-    {% include 4_what_you_should_bring.html %}
-    {% include 5_were_looking_for.html %}
-    {% include 6_much_thanks_to_our_friends.html %}
-    {% include 7_in_the_news.html %}
-    {% include 8_sign_up_today.html %}
-
-    {% comment %} if github pages supported jekyll 2.0 collections we'd do something like this
-    {% for post in site.ghostscrolls %}
+    {% for post in site.posts %}
     <div class='post-holder'>
             {% if forLoop.first %}
                 <article class="post first">
@@ -54,5 +43,4 @@ cover: /assets/images/happyvalleynodeschool.png
         <div class='post-after'></div>
     </div>
     {% endfor %}
-    {% endcomment %}
 </main>
