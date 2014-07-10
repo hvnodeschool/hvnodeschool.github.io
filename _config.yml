@@ -1,0 +1,9 @@
+name: Happy Valley Node School
+pygment: true
+
+timezone: America/New_York
+encoding: utf-8
+
+
+collections:
+ - ghostscroll
