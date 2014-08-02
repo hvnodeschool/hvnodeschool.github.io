@@ -1,0 +1,4 @@
+.vagrant
+_site
+Gemfile.lock
+Thumbs.db

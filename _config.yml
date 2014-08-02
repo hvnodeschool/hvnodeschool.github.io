@@ -6,4 +6,4 @@ markdown: kramdown
 timezone: America/New_York
 encoding: utf-8
 
-exclude: ['Dockerfile', 'Gemfile', 'README.md']
+exclude: ['Dockerfile', 'Gemfile', 'README.md', 'Vagrantfile', 'provision.sh']
