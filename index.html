@@ -1,46 +1,54 @@
 ---
-layout: ghostscroll
-title: Happy Valley - Learn Node.js Workshop
-
-logo: /assets/images/nodeschool_io_logo.png
-cover: /assets/images/happyvalleynodeschool.png
+layout: base
 ---
-<header id="site-head" {% if page.cover %}style="background-image: url({{ page.cover }})"{% endif %}>
-    <div class="vertical">
-        <div id="site-head-content" class="inner">
-
-            {% if page.logo %}<a id="blog-logo" href="/"><img src="{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
-            <h1 class="blog-title">{{ page.title }}</h1>
-            <h2 class="blog-description">A p2p node.js learning workshop in State College, PA., using the nodeschool.io open source choose-your-own-adventure lessons.</h2>
-
-            <a class='btn first'>Learn More!</a>
-            <a class='btn last'>Sign Me Up!</a><br>
-            <i id='header-arrow' class="fa fa-angle-down"></i>
-        </div>
-    </div>
-</header>
-
-<main class="content" role="main">
-    <div class='fixed-nav'></div>
-
-    {% for post in site.posts %}
-    <div class='post-holder'>
-            {% if forloop.first %}
-                <article class="post first">
-            {% elsif forloop.last %}
-                <article class="post last">
-            {% else %}
-                <article class="post">
-            {% endif %}
+<div class="blog-cover" style="background-image:url(assets/images/happyvalleynodeschool.png);">
+    
+    <section>
+        <div class="container">
+            <h1>{{ site.inc.title }}</h1>
+            {% if site.inc.subtitle %}<h3>{{ site.inc.subtitle }}</h3>{% endif %}
         
-            <header class="post-header">                
-                <h2 class="post-title">{{ post.title }}</h2>
-            </header>
-            <section class="post-content">
-                <p>{{ post.content }}</p>
-            </section>
-        </article>
-        <div class='post-after'></div>
-    </div>
+            {% if site.inc.twitter %}
+            <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
+            {% endif %}
+            {% if site.inc.facebook %}
+            <a href="http://facebook.com/{{ site.inc.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
+            {% endif %}
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss"></i>
+            </a>
+        </div>
+    </section>
+</div>
+
+
+<article class="container">
+{% for post in paginator.posts %}
+  {% unless post.draft %}
+    <section class="index">
+        <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
+        <div>
+            <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
+            <p>{{ post.excerpt }}</p>
+            <div class="meta">
+                Written By <address>{{ post.author.name }}</address> &mdash;
+                <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </div>
+        </div>
+        <hr>
+    </section>
+    {% endunless %}
     {% endfor %}
-</main>
+    <section class="pagination" style="text-align:center">
+      {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+        <a href="/" class="btn btn-outline">‹ Newer</a>
+        {% else %}
+        <a href="/page{{ paginator.previous_page }}" class="btn btn-outline">‹ Newer</a>
+        {% endif %}
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="/page{{ paginator.next_page }}" class="btn btn-outline">Older ›</a>
+      {% endif %}
+    </section>
+</article>
