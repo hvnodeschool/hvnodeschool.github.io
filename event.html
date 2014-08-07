@@ -1,0 +1,46 @@
+---
+layout: ghostscroll
+title: Happy Valley - Learn Node.js Workshop
+
+logo: /assets/images/nodeschool_io_logo.png
+cover: /assets/images/happyvalleynodeschool.png
+---
+<header id="site-head" {% if page.cover %}style="background-image: url({{ page.cover }})"{% endif %}>
+    <div class="vertical">
+        <div id="site-head-content" class="inner">
+
+            {% if page.logo %}<a id="blog-logo" href="/"><img src="{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
+            <h1 class="blog-title">{{ page.title }}</h1>
+            <h2 class="blog-description">A p2p node.js learning workshop in State College, PA., using the nodeschool.io open source choose-your-own-adventure lessons.</h2>
+
+            <a class='btn first'>Learn More!</a>
+            <a class='btn last'>Sign Me Up!</a><br>
+            <i id='header-arrow' class="fa fa-angle-down"></i>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    <div class='fixed-nav'></div>
+
+    {% for post in site.event %}
+    <div class='post-holder'>
+            {% if forloop.first %}
+                <article class="post first">
+            {% elsif forloop.last %}
+                <article class="post last">
+            {% else %}
+                <article class="post">
+            {% endif %}
+        
+            <header class="post-header">                
+                <h2 class="post-title">{{ post.title }}</h2>
+            </header>
+            <section class="post-content">
+                <p>{{ post.output }}</p>
+            </section>
+        </article>
+        <div class='post-after'></div>
+    </div>
+    {% endfor %}
+</main>

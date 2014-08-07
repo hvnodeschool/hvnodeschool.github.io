@@ -1,7 +1,7 @@
 ---
 title: Learn you the Node.js for much Win!
 ---
-<center>**nodeschool is a P2P learning event**</center>
+<center markdown="span">**nodeschool is a P2P learning event**</center>
 
 **What** - We're hosting a [nodeschool.io](http://nodeschool.io) workshop.
 
@@ -13,8 +13,8 @@ title: Learn you the Node.js for much Win!
 
 **Who** - We're just some Node enthusiasts and want to share the async love!
 
-{<1>}![nodeschool.io](https://raw.github.com/rvagg/learnyounode/master/learnyounode.png)
+![nodeschool.io](https://raw.github.com/rvagg/learnyounode/master/learnyounode.png)
 
-<center>
+<center markdown="span">
 ### Space is limited, [reserve your seat](https://ti.to/hvnodeschool/workshop) today.
 </center>
