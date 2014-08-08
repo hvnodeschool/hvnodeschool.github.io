@@ -1,0 +1,14 @@
+{
+	"dave": {
+		"name": "Dave",
+		"image": "/images/dave.png",
+		"bio": "the guy"
+	},
+
+	"donovan": {
+		"name": "Donovan",
+		"link": "https://github.com/djimenez",
+		"image": "https://avatars3.githubusercontent.com/u/451177",
+		"bio": "the dude"
+	}
+}

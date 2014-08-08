@@ -1,6 +1,9 @@
 ---
 layout: base
 ---
+{% if page.author and site.data.authors[page.author] %}
+    {% assign author = site.data.authors[page.author] %}
+{% endif %}
 {% if page.cover_image %}
 <div class="article-cover">
     <div>
@@ -12,10 +15,12 @@ layout: base
 
     <div class="container">
         <header>
+            {% if author %}
             <div class="meta">
-                By <address><a rel="author" href="{{ page.author.link }}" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash;
+                By <address><a rel="author" href="{{ author.link }}" title="{{ author.name }}" target="_blank">{{ author.name }}</a></address> &mdash;
                 <time pubdate datetime="{{ page.date | date: "%Y-%d-%B" }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
             </div>
+            {% endif %}
             <h1 class="title">{{ page.title }}</h1>
             {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
         </header>
@@ -26,13 +31,14 @@ layout: base
         </section>
 
         <footer>
+            {% if author %}
             <address>
-               {% if page.author.image %}<img src="/images/{{ page.author.image }}">{% endif %}
-                <p>Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong><br>
-                <span class="muted">{{ page.author.bio }}</span>
+                {% if author.image %}<img src="{{ author.image }}">{% endif %}
+                <p>Written by <strong><a rel="author" href="{{ author.link }}" title="{{ author.name }}" target="_blank">{{ author.name }}</a></strong><br>
+                <span class="muted">{{ author.bio }}</span>
                 </p>
             </address>
-
+            {% endif %}
         </footer>
 
         {% if site.inc.disqus.shortname %}
